@@ -41,7 +41,7 @@ def Download():
 					root.update_idletasks()
 
 				video=YouTube(Youtube_link,on_progress_callback=on_progress)
-				video.streams.filter(res=resolution,file_extension='Mp4').first().download(download_folder)
+				video.streams.filter(res=resolution).first().download(download_folder)
 				showinfo(title='Download Complete',message='Video has been Dowloaded succesfully')
 				progress_label.config(text='')
 				progress_bar['value']=0
